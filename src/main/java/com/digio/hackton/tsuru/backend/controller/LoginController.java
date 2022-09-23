@@ -2,6 +2,8 @@ package com.digio.hackton.tsuru.backend.controller;
 
 import com.digio.hackton.tsuru.backend.dto.LoginRequest;
 import com.digio.hackton.tsuru.backend.dto.LoginResponse;
+import com.digio.hackton.tsuru.backend.exceptions.GenericException;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,7 +18,7 @@ public class LoginController {
         if (loginDTO.getLogin().equals("felipe.oferreira@digio.com.br") && loginDTO.getPassword().equals("Conductor1")) {
             return new LoginResponse().setMessage("Successful!!");
         } else {
-            return new LoginResponse().setMessage("Error on login, please check you credential and try again");
+            throw new GenericException(HttpStatus.UNAUTHORIZED, "Error on login, please check you credential and try again");
         }
     }
 }
