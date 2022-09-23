@@ -2,15 +2,15 @@ package com.digio.hackton.tsuru.backend.dto;
 
 public class LoginRequest {
 
-    private String name;
+    private String login;
     private String password;
 
-    public String getName() {
-        return name;
+    public String getLogin() {
+        return login;
     }
 
-    public LoginRequest setName(String name) {
-        this.name = name;
+    public LoginRequest setLogin(String login) {
+        this.login = login;
         return this;
     }
 
