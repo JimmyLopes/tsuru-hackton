@@ -13,7 +13,7 @@ public class LoginController {
 
     @PostMapping
     public LoginResponse login(@RequestBody LoginRequest loginDTO) {
-        if (loginDTO.getName().equals("felipe.oferreira@digio.com.br") && loginDTO.getPassword().equals("Conductor1")) {
+        if (loginDTO.getLogin().equals("felipe.oferreira@digio.com.br") && loginDTO.getPassword().equals("Conductor1")) {
             return new LoginResponse().setMessage("Successful!!");
         } else {
             return new LoginResponse().setMessage("Error on login, please check you credential and try again");
